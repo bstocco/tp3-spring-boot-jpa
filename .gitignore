@@ -1,0 +1,15 @@
+# Entornos de desarrollo (IntelliJ, VS Code, Eclipse)
+.idea/
+.vscode/
+*.iml
+
+# Salidas de compilación (Gradle, Java)
+build/
+bin/
+.gradle/
+*.class
+
+# Reportes generados localmente por el MainReportes
+Reporte_Ventas.pdf
+Reporte_Ventas.txt
+Reporte_Ventas.*

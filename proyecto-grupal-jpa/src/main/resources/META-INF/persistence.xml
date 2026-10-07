@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
+             https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+
+    <persistence-unit name="proyecto-grupal-jpa" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!--Clases mapeadas -->
+        <class>tp.Articulo</class>
+        <class>tp.AuditoriaApp</class>
+        <class>tp.Cliente</class>
+        <class>tp.CondicionIva</class>
+        <class>tp.Contacto</class>
+        <class>tp.Domicilio</class>
+        <class>tp.EntityId</class>
+        <class>tp.FacturaVenta</class>
+        <class>tp.FacturaVentaDetalle</class>
+        <class>tp.ListaPrecio</class>
+        <class>tp.ListaPrecioArticulo</class>
+        <class>tp.Marca</class>
+        <class>tp.PuntoVenta</class>
+        <class>tp.Rubro</class>
+        <class>tp.TipoMoneda</class>
+        <class>tp.Usuario</class>
+
+        <properties>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://aws-0-us-west-2.pooler.supabase.com:6543/postgres?sslmode=require"/>
+            <property name="jakarta.persistence.jdbc.user" value="postgres.lwwhfecpmieiqqnuhlkn"/>
+            <property name="jakarta.persistence.jdbc.password" value="Grupodessarrollo"/>
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+
+            <!-- para que los INSERT se hagan bien (con guiones bajos) -->
+            <property name="hibernate.physical_naming_strategy" value="org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy"/>
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+
+            <!-- none apaga la validación de esquema en Main.java -->
+            <property name="hibernate.hbm2ddl.auto" value="none"/>
+
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>

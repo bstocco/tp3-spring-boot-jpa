@@ -1,0 +1,24 @@
+package tp;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "tp.Cliente")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@lombok.EqualsAndHashCode(callSuper = true)
+public class Cliente extends AuditoriaApp {
+    @Column(nullable = false)
+    private String cuitCuil;
+    @Column(nullable = false)
+    private String denominacion;
+    @OneToOne
+    @JoinColumn(nullable = false)
+    private Contacto contacto;
+    @OneToOne
+    @JoinColumn(nullable = false)
+    private Domicilio domicilio;
+}

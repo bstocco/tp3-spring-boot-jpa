@@ -1,0 +1,23 @@
+package tp;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "tp.Articulo")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@lombok.EqualsAndHashCode(callSuper = true)
+
+public class Articulo extends AuditoriaApp {
+    @ManyToOne
+    private Rubro rubro;
+    @Column(nullable = false)
+    private String codigo;
+    @Column(nullable = false)
+    private String denominacion;
+    @ManyToOne
+    private Marca marca;
+}
